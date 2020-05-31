@@ -8,8 +8,8 @@
 // ]
 
 var fs = require('fs');
-var contents = fs.readFileSync('quotes.json');
-var quotes = JSON.parse('quotes.json', 'utf8');
+var data = fs.readFileSync('quotes.json', 'utf8');
+var quotes = JSON.parse(data);
 
 function newQuote() {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
