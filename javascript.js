@@ -10,8 +10,10 @@
 var fs = require('fs');
 var data = fs.readFileSync('quotes.json', 'utf8');
 var quotes = JSON.parse(data);
+console.log(quotes)
 
 function newQuote() {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
+  console.log(quotes)
   document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
 }
