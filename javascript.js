@@ -10,13 +10,22 @@ var quotes = [
 
 
 function newQuote() {
-  var randomNumber = Math.floor(Math.random() * (quotes.length));
-  var nextQuote = quotes[randomNumber];
+  // var randomNumber = Math.floor(Math.random() * (quotes.length));
+  // var nextQuote = quotes[randomNumber];
+  var nextQuote = quotes[0]
 
-  while (document.getElementById('quoteDisplay').innerHTML == nextQuote) {
-    randomNumber = Math.floor(Math.random() * (quotes.length));
-    nextQuote = quotes[randomNumber];
+  currQuote = document.getElementById('quoteDisplay').innerHTML
+
+  for(i=0; i < quotes.length; i++) {
+    if (quotes[i] === currQuote) {
+      nextQuote = quotes[(i + 1) % quotes.length]
+    }
   }
-  
+
+  // while (document.getElementById('quoteDisplay').innerHTML == nextQuote) {
+  //   // randomNumber = Math.floor(Math.random() * (quotes.length));
+  //   // nextQuote = quotes[randomNumber];
+  // }
+
   document.getElementById('quoteDisplay').innerHTML = nextQuote
 }
