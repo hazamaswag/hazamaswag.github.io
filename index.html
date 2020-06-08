@@ -1,14 +1,51 @@
 <!doctype html>
 <html>
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
-  <body>
-    <h1>Quote Generator</h1>
-    <div id='quoteDisplay'>
+    <head>
+        <title>This is the title of the webpage!</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <div id='container'>
+            <div id="header">
+                <h1>Quote Generator</h1>
+            </div>
+            <div id="content">
+                <div id="nav">
+                    <h3> Navigation </h3>
+                    <ul>
+                        <li><a class="selected" href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div id="main">
+                    <h2>Home Page</h2>
+                    <div id="quoteDisplay">
+
+                    </div>
+                    <div id="buttonDisplay">
+                        <button onclick="newQuote()">New Quote</button>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="footer">
+                Copyright &copy; 2020 Hamza Sayyid.
+
+            </div>
+
+        </div>
+
+        <script src="javascript.js"></script>
+    </body>
+</html>
+
+
+    <!-- <div id='quoteDisplay'>
     </div>
     <button onclick="newQuote()">New Quote</button>
     <script src="javascript.js"></script>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
   </body>
-</html>
+</html> -->

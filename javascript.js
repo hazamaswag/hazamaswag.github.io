@@ -7,17 +7,24 @@ var quotes = [
   "You miss 100% of the shots you don't take."
 ]
 
+function shuffle(array) {
 
+  for (i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1))
+    let t = array[i]
+    array[i] = array[j]
+    array[j] = t
+
+  }
+}
 
 function newQuote() {
-  // var randomNumber = Math.floor(Math.random() * (quotes.length));
-  // var nextQuote = quotes[randomNumber];
+  // shuffle(quotes)
 
-  // var nextQuote = quotes[0]
   currQuote = document.getElementById('quoteDisplay').innerHTML
-
   curr_ind = quotes.indexOf(currQuote)
-  nextQuote = quotes[(curr_ind + 1) % quotes.length]
-  
+  next_ind = (curr_ind + 1) % quotes.length
+  nextQuote = quotes[next_ind]
+
   document.getElementById('quoteDisplay').innerHTML = nextQuote
 }
