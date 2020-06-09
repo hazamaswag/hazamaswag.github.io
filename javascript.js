@@ -20,11 +20,30 @@ function shuffle(array) {
 
 function newQuote() {
   // shuffle(quotes)
+  if (localStorage.last_quote) {
+      currQuote = quotes[get_last_quote()]
+  }
+  else {
+      currQuote = document.getElementById('quoteDisplay').innerHTML
+  }
 
-  currQuote = document.getElementById('quoteDisplay').innerHTML
   curr_ind = quotes.indexOf(currQuote)
   next_ind = (curr_ind + 1) % quotes.length
-  nextQuote = quotes[next_ind]
+  set_last_quote(next_ind)
+  nextQuote = quotes[get_last_quote()]
 
   document.getElementById('quoteDisplay').innerHTML = nextQuote
+}
+
+function set_last_quote(quote) {
+    if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("last_quote", quote)
+    }
+    else {
+        alert('d')
+    }
+}
+
+function get_last_quote() {
+    return parseInt(localStorage.getItem("last_quote"))
 }
