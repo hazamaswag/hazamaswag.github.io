@@ -7,16 +7,17 @@ var quotes = [
   "You miss 100% of the shots you don't take."
 ]
 
-function shuffle(array) {
-
-  for (i = array.length - 1; i > 0; i--) {
+function shuffle() {
+  for (i = quotes.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1))
-    let t = array[i]
-    array[i] = array[j]
-    array[j] = t
-
+    let t = quotes[i]
+    quotes[i] = quotes[j]
+    quotes[j] = t
   }
 }
+
+// Try storing the quote instead. Use the next quotes index to stop the potential
+// double quote bug
 
 function newQuote() {
   // shuffle(quotes)
@@ -40,7 +41,7 @@ function set_last_quote(quote) {
         localStorage.setItem("last_quote", quote)
     }
     else {
-        alert('d')
+        alert('no local storage')
     }
 }
 
